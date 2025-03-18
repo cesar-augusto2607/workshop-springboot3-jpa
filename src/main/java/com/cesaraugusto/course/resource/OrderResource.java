@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cesaraugusto.course.entities.Order;
-import com.cesaraugusto.course.entities.User;
 import com.cesaraugusto.course.services.OrderService;
 
 
