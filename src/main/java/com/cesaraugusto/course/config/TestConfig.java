@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Profile;
 import com.cesaraugusto.course.entities.Category;
 import com.cesaraugusto.course.entities.Order;
 import com.cesaraugusto.course.entities.OrderItem;
+import com.cesaraugusto.course.entities.Payment;
 import com.cesaraugusto.course.entities.Product;
 import com.cesaraugusto.course.entities.User;
 import com.cesaraugusto.course.entities.enums.OrderStatus;
@@ -83,5 +84,10 @@ public class TestConfig implements CommandLineRunner{
 		OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice());
 		
 		orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
+		
+		Payment pay2  = new Payment(null, Instant.parse("2019-07-23T03:42:10Z"), o2);
+		o2.setPayment(pay2);
+		orderRepository.save(o2);
+		
 	}
 }
